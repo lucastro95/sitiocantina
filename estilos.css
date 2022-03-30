@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+:root {
+    --vino: #A20A01;
+    --beige: #FAD393;
+    --marron-claro: #DE8735;
+    --rosa-claro:#F58147;
+    --rosa-oscuro: #E03209;
+}
+
+*::before,
+*::after,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--marron-claro);
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.presentacion {
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitulo {
+    text-align: center;
+    color: var(--vino);
+    font-size: 4em;
+}
+
+.titulo {
+    text-align: center;
+    color: var(--vino);
+    font-size: 6em;
+}
+
+.titulo_descripcion {
+    margin-top: 1em;
+    text-align: center;
+    color: var(--rosa-oscuro);
+    font-size: 1.7em;
+}
+
+.presentacion img {
+    margin-top: 1em;
+    width: 5em;
+}
+
+.servicios {
+    margin: 8em 3em;
+    display: flex;
+
+}
+
+.item_servicio {
+    width: 25em;
+    margin: 0 2em;
+    padding: 1em;
+    background-color: var(--beige);
+    border-radius: 1em;
+    box-shadow: 0 1em 3em 0em var(--vino);
+    border: 0.3em solid var(--vino);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item_servicio h2 {
+    border-bottom: solid #000;
+}
+
+.item_servicio p {
+    text-align: center;
+}
+
+.imagensub {
+    margin: 1em 0;
+    width: 15em;
+}
