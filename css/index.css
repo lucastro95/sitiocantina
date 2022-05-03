@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+/* Reset CSS */
+:root {
+    --vino: #85110A;
+    --beige: #FAD393;
+    --marron-claro: #DE8735;
+    --rosa-claro:#E99165;
+    --rosa-oscuro: #E03209;
+}
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: var(--vino);
+}
+
+
+/* Header section */
+
+header {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    
+}
+
+/* Nav section */
+
+.navBar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--vino);
+    position: fixed;
+}
+
+.navBar img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+.boton-menu {
+    margin-right: 1em;
+}
+
+.boton-menu .line {
+    display: block;
+    width: 38px;
+    height: 4px;
+    background-color: #FFF;
+    margin-block: 8px;
+    border-radius: 4px;
+    transition: transform .5s;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(1) {
+    transform: translateY(13px)
+    rotate(45deg);
+}
+
+#check:checked ~ .boton-menu .line:nth-child(2) {
+    opacity: 0;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(3) {
+    transform: translateY(-13px)
+    rotate(-45deg);
+}
+
+.navBar .menu-bar {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: var(--vino);
+    opacity: 0.9;
+    text-align: center;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li {
+    display: none;
+    line-height: 30px;
+    margin: 60px 0px;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li a {
+    color: #FFF;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+    color: var(--rosa-claro);
+    text-shadow: 0px 0px 5px var(--rosa-claro);
+    transition: .3s;
+    text-decoration: underline;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu-bar{
+    height: 100vh;
+}
+
+#check:checked ~ .menu-bar li {
+    display: block;
+}
+
+
+
+/* Main */
+
+main {
+    height: 100vh;
+    padding-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../assets/header_bg.jpg");
+    background-color: var(--marron-claro);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main h2 {
+    color: #FFF;
+    font-size: 35px;
+}
+
+main h1 {
+    color: #FFF;
+    font-size: 50px;
+    margin-bottom: 1em;
+}
+
+main a {
+    
+    padding: 0.5em 1em;
+
+    font-size: 1.5em;
+    color: var(--vino);
+    text-decoration: none;
+    font-weight: 500;
+
+    background-color: var(--beige);
+    border-radius: 1em;
+}
+
+
+/* Section sucursales */
+
+.sucursales {
+    width: 100%;
+
+    background-color: var(--vino);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sucursales h2 {
+    margin-top: 0.8em;
+    font-size: 2em;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.component-sucursal {
+    padding: 0 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-sucursal {
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-sucursal .foto {
+    margin-bottom: 1em;
+    width: 100%;
+    align-self: center;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-sucursal h3 {
+    margin-bottom: 0.5em;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+.card-sucursal .info {
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.card-sucursal .info p {
+    color: #FFF;
+    font-weight: 500;
+}
+
+.card-sucursal .icon{
+    margin-right: 0.5em;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+
+
+/* Section Banner */
+
+.banner {
+    padding-top: 3em;
+    background-color: var(--vino);
+}
+
+.banner img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+}
+
+
+
+/* Section map */
+
+.map {
+    background-color: var(--vino);
+}
+
+.map iframe {
+    width: 100%;
+    height: 20em;
+}
+
+
+
+/* Footer */
+
+footer {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer div {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div .icon {
+    font-size: 2em;
+    color: #FFF;
+}
+
+footer p {
+    text-align: center;
+    color: #FFF;
+}
+
+footer p a {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+footer p a:visited {
+    color: var(--rosa-oscuro);
+}
+
+
+
+/* Media Querys*/
+
+@media only screen and (min-width: 768px) {
+
+    /* Nav section */
+
+    .navBar {
+        flex-direction: column;
+        justify-content: center;
+        height: 200px;
+        padding: 0.5em;
+    }
+
+    .navBar img {
+        width: 100px;
+    }
+
+    .boton-menu {
+        display: none;
+    }
+
+    .navBar .menu-bar {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+        width: 100%;
+        min-width: 600px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: center;
+    }
+
+    .navBar .menu-bar li {
+        display: inline-block;
+        line-height: 50px;
+        margin: 0px 20px;
+        transition: none;
+    }
+
+    .navBar .menu-bar li a {
+        font-size: 2em;
+        color: #FFF;
+    }
+
+    .navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+        color: var(--rosa-claro);
+        text-decoration: underline;
+        transition: .3s;
+    }
+
+
+
+    /* Main */
+
+    main h2 {
+        font-size: 3.5em;
+    }
+
+    main h1 {
+        color: #FFF;
+        font-size: 5em;
+        margin-bottom: 1em;
+    }
+
+    main a {
+        padding: 0.6em 1.2em;
+        font-size: 1.7em;
+    }
+
+    main a:hover {
+        color: var(--vino);
+        background-color: var(--rosa-claro);
+    }
+
+
+
+    /* Section sucursales */
+
+    .sucursales h2 {
+        margin-top: 0.8em;
+        font-size: 3em;
+    }
+
+    .component-sucursal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card-sucursal {
+        width: 25%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-sucursal .foto {
+        height: 300px;
+    }
+    
+    .card-sucursal h3 {
+        font-size: 2em;
+    }
+    
+    .card-sucursal .info p {
+        font-size: 1.3em;
+    }
+    
+    .card-sucursal .icon{
+        font-size: 1.6em;
+    }
+
+
+
+    /* Section Banner */
+
+    .banner img {
+        height: 60vh;
+    }
+
+
+
+    /* Section Map */
+
+    .map iframe {
+        height: 30em;
+    }
+
+
+
+    /* Footer */
+
+    footer div {
+        margin-top: 2em;
+        width: 15%;
+    }
+
+    footer div .icon {
+        font-size: 2.5em;
+    }
+
+    footer p {
+        margin-top: 5em;
+    }
+
+    footer p a:visited {
+        color: var(--rosa-oscuro);
+    }
+}
