@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Reset CSS */
+:root {
+    --vino: #85110A;
+    --beige: #FAD393;
+    --marron-claro: #DE8735;
+    --rosa-claro: #F58147;
+    --rosa-oscuro: #E03209;
+}
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: var(--vino);
+}
+
+
+/* Header section */
+
+header {
+    width: 100%;
+    height: auto;
+    /* min-height: 100vh; */
+    
+}
+
+/* Nav section */
+
+.navBar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--vino);
+    position: fixed;
+}
+
+.navBar img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+.boton-menu {
+    margin-right: 1em;
+}
+
+.boton-menu .line {
+    display: block;
+    width: 38px;
+    height: 4px;
+    background-color: #FFF;
+    margin-block: 8px;
+    border-radius: 4px;
+    transition: transform .5s;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(1) {
+    transform: translateY(13px)
+    rotate(45deg);
+}
+
+#check:checked ~ .boton-menu .line:nth-child(2) {
+    opacity: 0;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(3) {
+    transform: translateY(-13px)
+    rotate(-45deg);
+}
+
+.navBar .menu-bar {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: var(--vino);
+    opacity: 0.9;
+    text-align: center;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li {
+    display: none;
+    line-height: 30px;
+    margin: 60px 0px;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li a {
+    color: #FFF;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+    color: var(--rosa-claro);
+    text-shadow: 0px 0px 5px var(--rosa-claro);
+    transition: .3s;
+    text-decoration: underline;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu-bar{
+    height: 100vh;
+}
+
+#check:checked ~ .menu-bar li {
+    display: block;
+}
+
+
+
+/* Main */
+
+main {
+    padding-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main div{
+    padding: 1em;
+    width: 80%;
+    height: calc(40vh - 100px);
+    display: flex;
+    align-items: flex-end;
+}
+
+main h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8em;
+    text-align: right;
+    color: #FFF;
+    font-weight: 400;
+}
+
+main video {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+
+
+/* Section */
+
+.component {
+    width: 100%;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.component h3 {
+    margin-bottom: 1em;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 400;
+}
+
+.component p {
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    color: #FFF;
+}
+
+.foto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.foto img{
+    width: 90%;
+}
+
+.component-1 {
+    background-color: var(--rosa-claro);
+}
+
+.component-2 {
+    background-color: var(--vino);
+}
+
+.component-1 h3 {
+    color: var(--vino);
+}
+
+.component-2 h3 {
+    color: var(--rosa-claro);
+}
+
+
+
+
+/* Footer */
+
+footer {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer div {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div .icon {
+    font-size: 2em;
+    color: #FFF;
+}
+
+footer p {
+    text-align: center;
+    color: #FFF;
+}
+
+footer p a {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+footer p a:visited {
+    color: var(--rosa-oscuro);
+}
+
+
+
+
+/* Media Qujerys */
+
+@media only screen and (min-width: 768px) {
+
+    /* Nav section */
+
+    .navBar {
+        flex-direction: column;
+        justify-content: center;
+        height: 200px;
+        padding: 0.5em;
+    }
+
+    .navBar img {
+        width: 100px;
+    }
+
+    .boton-menu {
+        display: none;
+    }
+
+    .navBar .menu-bar {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+        width: 100%;
+        min-width: 600px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: center;
+    }
+
+    .navBar .menu-bar li {
+        display: inline-block;
+        line-height: 50px;
+        margin: 0px 20px;
+        transition: none;
+    }
+
+    .navBar .menu-bar li a {
+        font-size: 2em;
+        color: #FFF;
+    }
+
+    .navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+        color: var(--rosa-claro);
+        text-decoration: underline;
+        transition: .3s;
+    }
+
+
+
+    /* Main */
+    main {
+        padding-top: 250px;
+    }
+
+    main div {
+        padding: 2em;
+        width: 100%;
+        height: calc(45vh - 200px);
+        justify-content: right;
+    }
+
+    main h2 {
+        padding-top: 1.5em;
+        font-size: 4em;
+    }
+
+    main video {
+        height: 55vh;
+    }
+
+
+
+    /* Section */
+    
+    .component {
+        width: 100%;
+        height: auto;
+        padding: 2em 1.5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .component .info {
+        width: 50%;
+    }
+
+    .component h3 {
+        margin-bottom: 1em;
+        font-size: 3em;
+        text-align: left;
+        font-weight: 400;
+    }
+
+    .component p {
+        margin-bottom: 2em;
+        font-size: 1.5em;
+        color: #FFF;
+    }
+
+    .foto {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .foto img{
+        width: 80%;
+    }
+
+    .component-1 {
+        background-color: var(--rosa-claro);
+        flex-direction: row-reverse;
+    }
+
+    .component-2 {
+        background-color: var(--vino);
+    }
+
+    .component-1 h3 {
+        color: var(--vino);
+    }
+
+    .component-2 h3 {
+        color: var(--rosa-claro);
+    }
+
+
+    /* Footer */
+
+    footer div {
+        margin-top: 2em;
+        width: 15%;
+    }
+
+    footer div .icon {
+        font-size: 2.5em;
+    }
+
+    footer p {
+        margin-top: 5em;
+    }
+
+    footer p a:visited {
+        color: var(--rosa-oscuro);
+    }
+}

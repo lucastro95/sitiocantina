@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/reservas.css">
+    <!-- Icon -->
+    <link rel="icon" href="./assets/logo.png">
+    <!-- Line Icons -->
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+   
+    <title>La Bella Italia - Reservas</title>
+</head>
+<body>
+    <header>
+        <nav class="navBar">
+            <div>
+                <a href="./index.html"><img class="logo" src="./assets/logo.png" alt="Logo de Vivero Eden"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="boton-menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </label>
+            <ul class="menu-bar">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./menu.html">Menú</a></li>
+                <li><a class="active" href="./reservas.html">Reservas</a></li>
+                <li><a href="./acerca_de.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="reservas-component">
+        <form action="" id="form">
+                <h3>Reserva tu mesa</h3>
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="inputs">
+                    <p class="error" id="error-nombre">Ingrese un nombre válido</p>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" class="inputs">
+                    <p class="error" id="error-apellido">Ingrese un apellido válido</p>
+                </div>
+                <div id="email">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" class="inputs">
+                    <p class="error" id="error-email">Ingrese un mail válido</p>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="number" id="telefono" name="telefono" class="inputs">
+                    <p class="error" id="error-telefono">Ingrese un teléfono válido</p>
+                </div>
+                <div>
+                    <label for="sucursal">Sucursal:</label>
+                    <select name="sucursal" id="sucursal" class="inputs">
+                        <option value="">Seleccione una opción</option>
+                        <option value="palermo">Palermo</option>
+                        <option value="microcentro">Microcentro</option>
+                        <option value="belgrano">Belgrano</option>
+                    </select>
+                    <p class="error" id="error-sucursal">Ingrese una sucursal</p>
+                </div>
+                <div>
+                    <label for="cantidad">Cant. de personas:</label>
+                    <select name="cantidad" id="cantidad" class="inputs">
+                        <option value="">Seleccione una opción</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <p class="error" id="error-cant">Ingrese la cantidad de personas</p>
+                </div>
+                <div class="fecha">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" min="2022-06-21" class="inputs" name="fecha">
+                    <p class="error" id="error-fecha">Ingrese una fecha válida</p>
+                </div>
+                <div id="mensaje-div">
+                    <label for="mensaje">Mensaje</label>
+                    <input type="texarea" name="mensaje" id="mensaje" class="inputs">
+                </div>
+                <div class="boton-submit">
+                    <button type="submit" id="boton-submit">Reservar</button>
+                </div>
+            </form>
+            <div class="img">
+                <img src="./assets/header_bg.jpg" alt="Restaurant">
+            </div>
+    </main>
+
+    <section class="sucursales">
+        <h2>Nuestras sucursales</h2>
+        <div class="component-sucursal">
+            <div class="card-sucursal">
+                <img class="foto" src="./assets/restaurant_1.jpg" alt="Sucursal Palermo">
+                <div>
+                    <h3>Sucursal Palermo</h3>
+                    <div class="info">
+                        <i class="lni lni-phone icon"></i>
+                        <p>xxx-xxxx-xxxx</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-envelope icon"></i>
+                        <p>ejemplo@email.com</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-map-marker icon"></i>
+                        <p>Calle 1, 1234</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-sucursal">
+                <img class="foto" src="./assets/restaurant_3.jpg" alt="Sucursal Microcentro">
+                <div>
+                    <h3>Sucursal Microcentro</h3>
+                    <div class="info">
+                        <i class="lni lni-phone icon"></i>
+                        <p>xxx-xxxx-xxxx</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-envelope icon"></i>
+                        <p>ejemplo@email.com</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-map-marker icon"></i>
+                        <p>Calle 1, 1234</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-sucursal">
+                <img class="foto" src="./assets/restaurant_6.jpg" alt="Sucursal Belgrano">
+                <div>
+                    <h3>Sucursal Belgrano</h3>
+                    <div class="info">
+                        <i class="lni lni-phone icon"></i>
+                        <p>xxx-xxxx-xxxx</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-envelope icon"></i>
+                        <p>ejemplo@email.com</p>
+                    </div>
+                    <div class="info">
+                        <i class="lni lni-map-marker icon"></i>
+                        <p>Calle 1, 1234</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3284.5944624684184!2d-58.43026143578003!3d-34.589126559187676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1651580723018!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    
+    <footer>
+        <div>
+            <a href="https://twitter.com/home?lang=es" target="_blank"><i class="lni lni-twitter-original icon"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="lni lni-instagram-original icon"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="lni lni-facebook-oval icon"></i></a>
+        </div>
+        <p>© Imágenes de <a href="https://www.freepik.es/">Freepik</a> y <a href="https://pixabay.com/">Pixabay</a>  -  Diseño y desarrollo por Lucía Castro</p>
+    </footer>
+
+    <script src="./js/reservas.js"></script>
+</body>
+</html>

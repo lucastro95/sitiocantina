@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+/* Reset CSS */
+:root {
+    --vino: #85110A;
+    --beige: #FAD393;
+    --marron-claro: #DE8735;
+    --rosa-claro:#F58147;
+    --rosa-oscuro: #E03209;
+}
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: var(--vino);
+}
+
+
+
+/* Header section */
+
+header {
+    width: 100%;    
+}
+
+
+
+
+/* Nav section */
+
+.navBar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--vino);
+    position: fixed;
+}
+
+.navBar img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+.boton-menu {
+    margin-right: 1em;
+}
+
+.boton-menu .line {
+    display: block;
+    width: 38px;
+    height: 4px;
+    background-color: #FFF;
+    margin-block: 8px;
+    border-radius: 4px;
+    transition: transform .5s;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(1) {
+    transform: translateY(13px)
+    rotate(45deg);
+}
+
+#check:checked ~ .boton-menu .line:nth-child(2) {
+    opacity: 0;
+}
+
+#check:checked ~ .boton-menu .line:nth-child(3) {
+    transform: translateY(-13px)
+    rotate(-45deg);
+}
+
+.navBar .menu-bar {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: var(--vino);
+    opacity: 0.9;
+    text-align: center;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li {
+    display: none;
+    line-height: 30px;
+    margin: 60px 0px;
+    transition: all .5s;
+}
+
+.navBar .menu-bar li a {
+    color: #FFF;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+    color: var(--rosa-claro);
+    text-shadow: 0px 0px 5px var(--rosa-claro);
+    transition: .3s;
+    text-decoration: underline;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu-bar{
+    height: 100vh;
+}
+
+#check:checked ~ .menu-bar li {
+    display: block;
+}
+
+
+
+/* Form */
+
+.reservas-component {
+    padding-top: 100px;
+    height: auto;
+    width: 100%;
+    background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservas-component form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservas-component form div, .fecha {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.reservas-component h3  {
+    padding: 0.6em 0;
+    font-size: 2.5em;
+    color: var(--vino);
+    font-weight: 400;
+}
+
+.reservas-component form label {
+    font-size: 1.3em;
+}
+
+.reservas-component form {
+    padding: 1em 2.5em;
+}
+
+.reservas-component input, #sucursal, #fecha, #cantidad {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 0.8em;
+    background-color: var(--rosa-claro);
+}
+
+#cantidad {
+    margin: 0 5em;
+    margin-bottom: 1em;
+}
+
+
+select option, select::placeholder {
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+#mensaje {
+    height: 7em;
+}
+
+.reservas-component button {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+
+    font-size: 1.5em;
+    color: var(--vino);
+    text-decoration: none;
+    font-weight: 500;
+
+    background-color: var(--rosa-claro);
+    border: none;
+    border-radius: 1em;
+}
+
+.reservas-component button:hover {
+    background-color: #85110A;
+    color: var(--rosa-claro);
+    cursor: pointer;
+}
+
+.reservas-component button:disabled {
+    background-color: #bb7c5f;
+    color: #572925;
+}
+
+.img {
+    display: none;
+}
+
+.error {
+    margin-bottom: 1em;
+    color: var(--vino);
+    visibility: hidden;
+}
+
+
+/* Section sucursales */
+
+.sucursales {
+    width: 100%;
+
+    background-color: var(--vino);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sucursales h2 {
+    margin-top: 0.8em;
+    font-size: 2em;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.component-sucursal {
+    padding: 0 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-sucursal {
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-sucursal .foto {
+    margin-bottom: 1em;
+    width: 100%;
+    align-self: center;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-sucursal h3 {
+    margin-bottom: 0.5em;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+.card-sucursal .info {
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.card-sucursal .info p {
+    color: #FFF;
+    font-weight: 500;
+}
+
+.card-sucursal .icon{
+    margin-right: 0.5em;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+
+
+
+/* Section map */
+
+.map {
+    margin-top: 2em;
+    background-color: var(--vino);
+}
+
+.map iframe {
+    width: 100%;
+    height: 20em;
+}
+
+
+
+/* Footer */
+
+footer {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer div {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div .icon {
+    font-size: 2em;
+    color: #FFF;
+}
+
+footer p {
+    text-align: center;
+    color: #FFF;
+}
+
+footer p a {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+footer p a:visited {
+    color: var(--rosa-oscuro);
+}
+
+
+
+/* Media Querys */
+
+@media only screen and (min-width: 768px) {
+    
+    
+    /* Nav section */
+    .navBar {
+        flex-direction: column;
+        justify-content: center;
+        height: 200px;
+        padding: 0.5em;
+    }
+        
+    .navBar img {
+        width: 100px;
+    }
+    
+    .boton-menu {
+        display: none;
+    }
+    
+    .navBar .menu-bar {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+        width: 100%;
+        min-width: 600px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: center;
+    }
+    
+    .navBar .menu-bar li {
+        display: inline-block;
+        line-height: 50px;
+        margin: 0px 20px;
+        transition: none;
+    }
+    
+    .navBar .menu-bar li a {
+        font-size: 2em;
+        color: #FFF;
+    }
+    
+    .navBar .menu-bar li a.active, .navBar .menu-bar li a:hover{
+        color: var(--rosa-claro);
+        text-decoration: underline;
+        transition: .3s;
+    }
+
+
+    /* Form */
+
+    .reservas-component {
+        padding-top: 200px;
+        min-height: 100vh;
+        width: 100%;
+        background-color: var(--beige);
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .reservas-component form {
+        padding: 2em;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .reservas-component form div {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+
+
+    .reservas-component h3  {
+        width: 100%;
+        padding: 0.6em 0;
+        font-size: 2.8em;
+        color: var(--vino);
+        font-weight: 400;
+    }
+
+    .reservas-component form label {
+        font-size: 1.5em;
+    }
+
+    .reservas-component form {
+        padding: 1em 2.5em;
+    }
+
+    .reservas-component input, #sucursal, #cantidad {
+        width: 100%;
+        display: inline;
+        padding: 1em 2em;
+        border: none;
+        border-radius: 0.8em;
+        background-color: var(--rosa-claro);
+    }
+
+    #email {
+        width: 100%;
+    }
+
+    #cantidad {
+        margin: 0;
+    }
+
+    .input-fecha {
+        margin-right: 0.5em;
+    }
+
+    select option, select::placeholder {
+        color: #FFF;
+    }
+
+    #mensaje {
+        height: 7em;
+    }
+
+    #mensaje-div{
+        width: 45%;
+    }
+
+    .reservas-component button {
+        
+        padding: 0.5em 1em;
+        margin: 1em 0;
+        margin-left: 1em;
+        width: 6em;
+
+        font-size: 1.5em;
+        color: var(--vino);
+        text-decoration: none;
+        font-weight: 500;
+        
+
+        background-color: var(--rosa-claro);
+        border: none;
+        border-radius: 1em;
+    }
+
+    .reservas-component .img {
+        display: inline;
+        width: 50%;
+        min-height: calc(100vh - 200px);
+        height: 110vh;
+    }
+
+    .img img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+
+    /* Section sucursales */
+
+    .sucursales h2 {
+        margin-top: 0.8em;
+        font-size: 3em;
+    }
+
+    .component-sucursal {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .card-sucursal {
+        width: 25%;
+        min-width: 300px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-sucursal .foto {
+        height: 300px;
+    }
+    
+    .card-sucursal h3 {
+        font-size: 2em;
+    }
+    
+    .card-sucursal .info p {
+        font-size: 1.3em;
+    }
+    
+    .card-sucursal .icon{
+        font-size: 1.6em;
+    }
+
+
+    /* Section Map */
+
+    .map iframe {
+        height: 30em;
+    }
+
+
+    /* Footer */
+
+    footer div {
+        margin-top: 2em;
+        width: 15%;
+    }
+
+    footer div .icon {
+        font-size: 2.5em;
+    }
+
+    footer p {
+        margin-top: 5em;
+    }
+
+    footer p a:visited {
+        color: var(--rosa-oscuro);
+    }
+}
+

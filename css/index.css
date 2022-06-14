@@ -5,7 +5,7 @@
     --vino: #85110A;
     --beige: #FAD393;
     --marron-claro: #DE8735;
-    --rosa-claro:#E99165;
+    --rosa-claro:#F58147;
     --rosa-oscuro: #E03209;
 }
 
@@ -27,9 +27,7 @@ body {
 
 header {
     width: 100%;
-    height: auto;
-    min-height: 100vh;
-    
+    height: auto;  
 }
 
 /* Nav section */
@@ -386,10 +384,12 @@ footer p a:visited {
     .component-sucursal {
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .card-sucursal {
         width: 25%;
+        min-width: 300px;
         flex-direction: column;
         align-items: flex-start;
     }
