@@ -2,8 +2,13 @@
 const formulario = document.getElementById("form");
 const inputs = document.querySelectorAll("#form .inputs");
 const boton = document.querySelector('#boton-submit')
+const abrirModal = document.getElementById('boton-submit')
+const modal = document.querySelector('.modal')
+const parrafoModal = document.querySelector('.modal__paragraph')
+const cerrarModal = document.querySelector('.modal__close')
 
 // Variables
+let emailValor = ''
 let nombre = false
 let apellido = false
 let telefono = false
@@ -19,6 +24,23 @@ const expresiones = {
   telefono: /^\d{7,14}$/, // 7 a 14 numeros.
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 };
+
+// Determinar el mínimo y el máximo del input fecha
+const input_fecha = document.querySelector("#fecha")
+const dia = new Date().getDate()
+const mes = (new Date().getMonth()) + 1
+const anio = new Date().getFullYear()
+if (mes < 10) {
+  input_fecha.setAttribute('min', `${anio}-0${mes}-${dia}`)
+} else {
+  input_fecha.setAttribute('min', `${anio}-${mes}-${dia}`)
+}
+
+if (mes < 10) {
+  input_fecha.setAttribute('max', `${anio + 1}-0${mes}-${dia}`)
+} else {
+  input_fecha.setAttribute('max', `${anio + 1}-${mes}-${dia}`)
+}
 
 
 // Validación de formulario
@@ -59,6 +81,7 @@ const validarFormulario = (e) => {
       if (expresiones.correo.test(e.target.value)) {
         document.getElementById("error-email").style = "visibility:hidden";
         email = true
+        emailValor = e.target.value
       } else {
         document.getElementById("error-email").style = "visibility:visible";
         email = false
@@ -106,29 +129,6 @@ const validarFormulario = (e) => {
   }
 };
 
-/* const validarSelect = (e) => {
-  switch (e.target.name) {
-    case "sucursal":
-      if (e.target.value != "") {
-        document.getElementById("error-sucursal").style = "visibility:hidden";
-        boton.disabled = false
-      } else {
-        document.getElementById("error-sucursal").style = "visibility:visible";
-        boton.disabled = true
-      }
-      break;
-
-    case "cantidad":
-      if (e.target.value != "") {
-        document.getElementById("error-cant").style = "visibility:hidden";
-        boton.disabled = false
-      } else {
-        document.getElementById("error-cant").style = "visibility:visible";
-        boton.disabled = true
-      }
-      break;
-  }
-}; */
 
 
 // Event listeners
@@ -138,8 +138,13 @@ inputs.forEach((input) => {
   input.addEventListener("change", validarFormulario);
 });
 
-// fecha.addEventListener('change', validarFecha) 
-
 formulario.addEventListener("submit", (e) => {
   e.preventDefault()
+  modal.classList.add('modal--show')
+  parrafoModal.textContent = `Podes ver la información de tu reserva en el mail ${emailValor}`
 });
+
+cerrarModal.addEventListener('click', (e) => {
+  e.preventDefault()
+  modal.classList.remove('modal--show')
+})

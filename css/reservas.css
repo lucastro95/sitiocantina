@@ -4,6 +4,7 @@
 :root {
     --vino: #85110A;
     --beige: #FAD393;
+    --baige-transparente: #fad293a8;
     --marron-claro: #DE8735;
     --rosa-claro:#F58147;
     --rosa-oscuro: #E03209;
@@ -198,6 +199,8 @@ select option, select::placeholder {
     background-color: var(--rosa-claro);
     border: none;
     border-radius: 1em;
+
+    transition: background-color .3s;
 }
 
 .reservas-component button:hover {
@@ -339,6 +342,76 @@ footer p a:visited {
     color: var(--rosa-oscuro);
 }
 
+
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--baige-transparente);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.modal__container {
+    width: 90%;
+    height: auto;
+    padding: 1em 1em;
+    background-color: var(--rosa-claro);
+    border-radius: 1.5em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.modal__title {
+    font-weight: 400;
+    font-size: 1.8em;
+    text-align: center;
+    color: var(--vino);
+}
+
+.modal__paragraph {
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: #FFF;
+    font-weight: 400;
+    text-align: center;
+}
+
+.modal__close {
+    padding: 0.3em 1.3em;
+    margin-top: 1em;
+
+    font-size: 1.5em;
+    color: var(--vino);
+    text-decoration: none;
+    font-weight: 500;
+
+    background-color: var(--beige);
+    border: none;
+    border-radius: 1em;
+
+    transition: background-color .3s;
+}
+
+.modal__close:hover {
+    background-color: #85110A;
+    color: var(--rosa-claro);
+    cursor: pointer;
+}
 
 
 /* Media Querys */
@@ -566,6 +639,15 @@ footer p a:visited {
 
     footer p a:visited {
         color: var(--rosa-oscuro);
+    }
+
+
+
+    /* Modal */
+
+    .modal__container {
+        width: 40%;
+        padding: 3em 2em;
     }
 }
 

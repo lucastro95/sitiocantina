@@ -365,11 +365,13 @@ footer p a:visited {
     main a {
         padding: 0.6em 1.2em;
         font-size: 1.7em;
+        transition: background-color .3s;
     }
 
     main a:hover {
         color: var(--vino);
         background-color: var(--rosa-claro);
+        cursor: pointer;
     }
 
 

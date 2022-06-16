@@ -82,7 +82,7 @@
                 </div>
                 <div class="fecha">
                     <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" min="2022-06-21" class="inputs" name="fecha">
+                    <input type="date" id="fecha" class="inputs" name="fecha">
                     <p class="error" id="error-fecha">Ingrese una fecha válida</p>
                 </div>
                 <div id="mensaje-div">
@@ -90,7 +90,7 @@
                     <input type="texarea" name="mensaje" id="mensaje" class="inputs">
                 </div>
                 <div class="boton-submit">
-                    <button type="submit" id="boton-submit">Reservar</button>
+                    <button type="submit" id="boton-submit" disabled>Reservar</button>
                 </div>
             </form>
             <div class="img">
@@ -162,16 +162,24 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3284.5944624684184!2d-58.43026143578003!3d-34.589126559187676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1651580723018!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    
     <footer>
         <div>
             <a href="https://twitter.com/home?lang=es" target="_blank"><i class="lni lni-twitter-original icon"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="lni lni-instagram-original icon"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="lni lni-facebook-oval icon"></i></a>
         </div>
-        <p>© Imágenes de <a href="https://www.freepik.es/">Freepik</a> y <a href="https://pixabay.com/">Pixabay</a>  -  Diseño y desarrollo por Lucía Castro</p>
+        <p>© Imágenes de <a href="https://www.freepik.es/" target="_blank">Freepik</a> y <a href="https://pixabay.com/" target="_blank">Pixabay</a>  -  Diseño y desarrollo por Lucía Castro</p>
     </footer>
 
+    <section class="modal">
+        <div class="modal__container">
+            <h2 class="modal__title">¡Tu reserva ha sido confirmada!</h2>
+            <p class="modal__paragraph">grgergregre</p>
+            <a href="#" class="modal__close">Aceptar</a>
+        </div>
+    </section>
+
     <script src="./js/reservas.js"></script>
+    <!-- <script src="./js/modal.js"></script> -->
 </body>
 </html>
